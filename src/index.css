@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* #d73cbe? */
+
+:root {
+  --primary-bg: #000;
+  --primary-color: white;
+  --primary-hover: #d73cbe;
+  --secondary-bg: rgba(128, 0, 128, 0.251);
+  --font-size: 2rem;
+  --font-main-heading: 6rem;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: black;
+  --div-color: #4d4d4d;
+  --fColor: white;
+  --bg-color: #242424;
+  --fSize: 25px;
+  --bColor: #00bf63;
+  --hColor: #077540;
+}
+
+* {
+  color: var(--primary-color);
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: var(--primary-bg);
+}
+
+svg {
+  height: 3rem;
+  width: 3rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 2px solid black;
+  background-color: #000002e8;
+}
+
+._flex-md {
+  @apply flex items-center justify-center flex-row gap-4 rounded-xl;
+}
+
+._flex {
+  @apply flex items-center justify-center flex-col gap-4 rounded-xl flex-wrap;
+}
+
+::backdrop {
+  background-image: linear-gradient(black, gray);
+  opacity: 0.7;
+}
