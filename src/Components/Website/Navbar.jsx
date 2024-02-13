@@ -122,6 +122,7 @@ const Navbar = ({ onMain }) => {
           </a>
         </h5>
       </dialog>
+
       <nav className="flex items-start lg:items-center justify-between m-5 lg:flex-row">
         <div className="_flex lg:flex-row h-8 lg:h-24">
           <div className="_flex lg:flex-row">
