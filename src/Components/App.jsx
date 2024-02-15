@@ -5,8 +5,8 @@ import Signup from "./Website/Signup";
 export default function App() {
   return (
     <>
-      {/* <Page /> */}
-      <Signup />
+      <Page />
+      {/* <Signup /> */}
     </>
   );
 }

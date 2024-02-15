@@ -4,7 +4,7 @@ import Hero from "./Hero";
 import BoxSection from "./BoxSection";
 import ContactUs from "./ContactUs";
 
-function Page({ onMain }) {
+function Page() {
   const arr = [
     "Features",
     "Why Evently?",
@@ -13,7 +13,7 @@ function Page({ onMain }) {
   ];
   return (
     <>
-      <Navbar onMain={onMain} />
+      <Navbar />
       <Hero />
       {arr.map((ele, ind) => (
         <BoxSection key={ind} heading={ele} />

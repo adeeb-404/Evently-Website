@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-const Navbar = ({ onMain }) => {
+const Navbar = () => {
   const ref = useRef();
 
   function handleClick() {
@@ -15,112 +15,96 @@ const Navbar = ({ onMain }) => {
     window.open("https://www.google.com/");
   }
 
-  const [modalMarkup, setModalMarkup] = useState([
-    true,
-    <>
-      <form action="">
-        <h1 className=" text-xl text-stone-200 mb-4">Log in</h1>
-        <div>
-          <h3 className="my-3">Username</h3>
-          <input type="text" className="mb-4 focus:bg-stone-300" />
-          <h3 className="my-3">Password</h3>
-          <input type="password" className=" focus:bg-stone-300" />
-        </div>
-        <button
-          onClick={onSubmit}
-          type="submit"
-          className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100"
-        >
-          Submit
-        </button>
-      </form>
-      <form method="dialog">
-        <button
-          className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100"
-          onClick={handleClickClose}
-        >
-          close
-        </button>
-      </form>
-    </>,
-  ]);
+  function handleSubmit(e) {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const data = Object.fromEntries(fd.entries());
+    console.log(data);
+    e.target.reset();
+  }
 
-  function handleModal() {
-    const markup = modalMarkup[0] ? (
-      <>
-        <form action="">
-          <h1 className=" text-xl text-stone-200 mb-4">Log in</h1>
-          <div>
-            <h3 className="my-3">Username</h3>
-            <input type="text" className="mb-4 focus:bg-stone-300" />
-            <h3 className="my-3">Password</h3>
-            <input type="password" className=" focus:bg-stone-300" />
-          </div>
-          <button
-            onClick={onMain}
-            type="submit"
-            className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100"
-          >
-            Submit
-          </button>
-        </form>
-        <form method="dialog">
-          <button
-            className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100"
-            onClick={handleClickClose}
-          >
-            close
-          </button>
-        </form>
-      </>
+  const [modalMarkup, setModalMarkup] = useState(
+    <div>
+      <h3 className="my-3">Username</h3>
+      <input type="text" className="mb-4 focus:bg-stone-300" />
+      <h3 className="my-3">Password</h3>
+      <input type="password" className=" focus:bg-stone-300" />
+    </div>
+  );
+
+  const [signup, setsignup] = useState(true);
+
+  function handleModal(login) {
+    setsignup(login);
+    const markup = login ? (
+      <div>
+        <h3 className="my-3">Username</h3>
+        <input type="text" className="mb-4 focus:bg-stone-300" />
+        <h3 className="my-3">Password</h3>
+        <input type="password" className=" focus:bg-stone-300" />
+      </div>
     ) : (
-      <>
-        <form action="">
-          <h1 className=" text-xl text-stone-200 mb-4">Sign Up </h1>
-          <div>
-            <h3 className="my-3"> First Name</h3>
-            <input type="text" className="mb-4 focus:bg-stone-300" />
-            <h3 className="my-3"> Last Name</h3>
-            <input type="text" className="mb-4 focus:bg-stone-300" />
-            <h3 className="my-3">Username</h3>
-            <input type="text" className="mb-4 focus:bg-stone-300" />
-            <h3 className="my-3">Password</h3>
-            <input type="password" className=" focus:bg-stone-300" />
-          </div>
-          <button
-            onClick={onMain}
-            type="submit"
-            className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100"
-          >
-            Submit
-          </button>
-        </form>
-        <form method="dialog">
-          <button
-            className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100"
-            onClick={handleClickClose}
-          >
-            close
-          </button>
-        </form>
-      </>
+      <div>
+        <h3 className="my-3">First Name</h3>
+        <input type="text" className="mb-4 focus:bg-stone-300" />
+        <h3 className="my-3">Last Name</h3>
+        <input type="text" className="mb-4 focus:bg-stone-300" />
+        <h3 className="my-3">Username</h3>
+        <input type="text" className="mb-4 focus:bg-stone-300" />
+        <h3 className="my-3">Password</h3>
+        <input type="password" className=" focus:bg-stone-300" />
+      </div>
     );
-    setModalMarkup([!modalMarkup[0], markup]);
+    setModalMarkup(markup);
   }
 
   return (
     <>
       <dialog
-        className=" border-gray-400 rounded-xl p-16 mx-auto my-auto border-2 bg-stone-950 "
+        className=" border-gray-400 rounded-b-xl mx-auto my-auto border-2 bg-stone-950 w-80 h-fit"
         ref={ref}
       >
-        {modalMarkup}
-        <h5 className="my-2">
-          Don't have an account?
-          <a onClick={handleModal} className=" cursor-pointer text-blue-800">
-            Create here
-          </a>
-        </h5>
+        <div className="flex items-center justify-around bg-red-500 w-full rounded-b-lg">
+          <button
+            className={`w-[50%] ${!signup && "bg-black"}`}
+            onClick={() => handleModal(true)}
+          >
+            Log-in
+          </button>
+          <button
+            className={`w-[50%] ${signup && "bg-black"}`}
+            onClick={() => handleModal(false)}
+          >
+            Sign Up
+          </button>
+        </div>
+        <div className="_flex p-10">
+          <form onSubmit={handleSubmit}>
+            {modalMarkup}
+            <button
+              onClick={onSubmit}
+              type="submit"
+              className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100"
+            >
+              Submit
+            </button>
+            <button
+              onClick={onSubmit}
+              type="reset"
+              className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100 mx-10"
+            >
+              Reset
+            </button>
+          </form>
+          <form method="dialog">
+            {/* <button
+              className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100"
+              onClick={handleClickClose}
+            >
+              close
+            </button> */}
+          </form>
+        </div>
       </dialog>
 
       <nav className="flex items-start lg:items-center justify-between m-5 lg:flex-row">
