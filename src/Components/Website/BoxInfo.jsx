@@ -5,7 +5,7 @@ const Info = {
       image: <AiFillAlert />,
       box_heading: "Effortless Event Creation:",
       box_data:
-        "Quickly create events with a user-friendly interface that guides you through the process, ensuring all necessary details are included.",
+        "Simplify event organization with our effortless creation feature. Streamlined processes, intuitive interfaces, and customization options empower hosts for seamless event planning..",
     },
     {
       image: <AiFillAlert />,
