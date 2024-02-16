@@ -1,0 +1,101 @@
+.popupBody {
+  z-index: 200;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  /* background-color: black; */
+  /* filter: blur(0.4rem); */
+}
+
+.popupContent {
+  top: 6rem;
+  background-color: var(--div-color);
+  width: 50rem;
+  height: 35rem;
+  padding: 2rem;
+  font-size: 1.1rem;
+  position: relative;
+  top: 1rem;
+  text-align: left;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  /* font-weight: bold; */
+}
+
+.popupContent .bck-btn {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: inline;
+  padding: 0 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.popupContent .bck-btn:hover {
+  background-color: rgba(0, 0, 0, 0.64);
+  color: rgb(203, 66, 66);
+}
+
+.popupContent > .contentContainer {
+  display: flex;
+  gap: 8rem;
+}
+
+.popupContent ul {
+  list-style-type: none;
+}
+
+.popupContent li {
+  margin: 0.4rem;
+}
+
+.popupContent .ContentInfo {
+  font-weight: 300;
+  display: inline;
+}
+
+.popupContent .ContentInfo li {
+  background-color: rgba(33, 31, 31, 0.686);
+  padding: 0 1rem;
+  /* border: 0.5px solid white; */
+}
+
+.popupContent .ContentName {
+  font-weight: 500;
+  display: inline;
+}
+
+.popupContent .eventDisc {
+  margin-top: 2rem;
+  font-weight: 500;
+  /* font-size: 1.2rem; */
+}
+
+.popupContent::-webkit-scrollbar {
+  display: none;
+}
+
+.popupContent .AttendBtn {
+  background-color: var(--bColor);
+  width: max-content;
+  /* display: flex; */
+  text-align: right;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.AttendBtn:hover {
+  background-color: var(--hColor);
+  box-shadow: 0.1rem 0.1rem 0.6rem black;
+}

@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import Page from "./Website/page";
-import Signup from "./Website/Signup";
+import MainApp from "./MainApp/JSX-components/MainApp";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Page />,
+  },
+  {
+    path: "/Mainapp",
+    element: <MainApp />,
+  },
+]);
 
 export default function App() {
   return (
     <>
-      <Page />
-      {/* <Signup /> */}
+      <RouterProvider router={router} />
     </>
   );
 }

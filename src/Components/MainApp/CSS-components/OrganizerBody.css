@@ -1,0 +1,113 @@
+.organizerBody h2{
+    display: inline;
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  /* .EventBox p{
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  
+  } */
+  
+
+  
+  .organizerBody{
+    margin-top: 1.4rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* left: auto; */
+    /* right: auto; */
+    width: 100vh;
+    /* height: fit-content; */
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .organizerBody > div{
+    width: max-content;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 0.4rem;
+  }
+  
+  .organizerBody h2{
+    font-size: 2rem;
+    margin: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .organizerBody ul{
+    list-style-type: none;
+    /* width: 100vh; */
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    background-color: var(--div-color);
+    border-radius: 0.4rem;
+  }
+  
+  .organizerBody li {
+    margin: 0.4rem 0;
+    font-weight: 500;
+  }
+  
+  .organizerBody p {
+    width: max-content;
+    display: inline;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+    text-align: left;
+  }
+  
+  .organizerBody input{
+    /* margin-left: 60px; */
+    width: 36rem;
+    background-color: #34343400;
+    border: 0;
+    border-bottom: 0.05rem solid white;
+    border-radius: 0;
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .organizerBody input::placeholder{
+    color: rgba(211, 211, 211, 0.345);
+    font-style:italic;
+  }
+  
+  .listName{
+    text-align: left;
+  }
+  
+  .OrganizerBox{
+    text-align: right;
+  }
+
+  .organizerBody button{
+    /* color: green; */
+    background-color: var(--bColor);
+    color: var(--fColor);
+    padding: 0.3rem 1.2rem;
+    font-size: 1.5rem;
+    margin: 1rem;
+    border:0.04rem solid black;
+    border-radius: 0.9rem;
+  }
+
+  .organizerBody button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0.1rem 0.1rem 0.4rem black;
+    background-color: var(--hColor);
+    /* border: 0; */
+  }

@@ -1,0 +1,46 @@
+.EventBox {
+  height: fit-content;
+  width: 95%;
+  /* background-color: var(--div-color); */
+  /* display: inline; */
+  margin: 1rem 0.6rem;
+  text-align: start;
+  padding: 0.5rem 1.1rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+  /* position: sticky; */
+}
+
+.EventBox:hover {
+  box-shadow: 0.5rem 0.5rem 1rem rgba(95, 95, 95, 0.441);
+  border: 0.08rem solid rgb(168, 155, 155);
+  -webkit-transition: box-shadow linear 1s;
+  transition: box-shadow linear 0.2s;
+}
+
+.EventBox:focus {
+  box-shadow: 0 0 20px #143b91;
+}
+
+.EventBox .BoxHeading {
+  width: 100%;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 600;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid white;
+  border-radius: 0;
+}
+
+.BoxHeading > div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+}
+
+.EventBox p {
+  margin-top: 0.5rem;
+}

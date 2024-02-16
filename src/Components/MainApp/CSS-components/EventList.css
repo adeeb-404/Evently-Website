@@ -1,0 +1,9 @@
+.EventList{
+    /* width: calc((100% - 70px) / 2); */
+    /* position: sticky; */
+    width: 98%;
+    margin: 0 1.4rem;
+    border-left: 0.4rem solid black;
+    border-top: 0.05rem solid black;
+    border-radius: 0.2rem;
+  }

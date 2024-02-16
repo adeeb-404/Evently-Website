@@ -1,0 +1,54 @@
+.navContainer {
+  overflow: hidden;
+  z-index: 10;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1rem;
+  border-bottom: 0.3rem solid black;
+  align-items: center;
+  width: 100vw;
+  height: 4.5rem;
+  top: 0;
+  background-color: var(--div-color);
+  /* border-radius: 10%; */
+  padding: 1.6rem;
+  box-sizing: border-box;
+}
+
+.navContainer > div {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.searchBar {
+  outline: none;
+  height: 1.95rem;
+  width: 16rem;
+  background-color: rgb(210, 200, 200);
+  font-size: 1.1rem;
+  padding-left: 0.6rem;
+  color: var(--fBcolor);
+}
+
+.searchBar::placeholder {
+  color: black;
+}
+
+.navContainer .reactIcon {
+  font-size: 1.3rem;
+  color: white;
+  margin: 0.2rem;
+}
+
+.navContainer #profileIcon {
+  font-size: 1.8rem;
+}
+
+.nav--evently {
+  font-family: "Orbitron", sans-serif;
+}

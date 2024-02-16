@@ -1,0 +1,12 @@
+.EventInfo{
+    position: fixed;
+    opacity: 0.5;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(#343434);
+    text-align: left;
+}
+
+.EventInfo ul{
+    list-style-type: none;
+}
