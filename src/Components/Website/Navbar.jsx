@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const ref = useRef();
+  const navigator = useNavigate();
   const [signup, setsignup] = useState(false);
   const [user, setUser] = useState({});
   const [userLogin, setUserLogin] = useState({});
@@ -25,22 +27,22 @@ const Navbar = () => {
     e.preventDefault();
     console.log(user);
     try {
-      const response = await fetch(
-        "http://localhost:443/backend/api/testresponse.php",
-        {
-          method: "POST",
-          //  mode:"no-cors",
-          body: JSON.stringify(user),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch("http://localhost/api/testresponse.php", {
+        method: "POST",
+        //  mode:"no-cors",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       // if (!response.ok) {
       //   throw new Error(HTTP error! Status: ${response.status});
       // }
 
       const data = await response.json();
+      if (data.Status === 200) {
+        navigator("/Mainapp");
+      }
       // setStatusCode(200);
       // Store the response data in state or do something else with it
       console.log(data);
@@ -61,22 +63,23 @@ const Navbar = () => {
     // e.preventDefault();
     console.log(userLogin);
     try {
-      const response = await fetch(
-        "http://localhost:443/backend/api/formlogin.php",
-        {
-          method: "POST",
-          //  mode:"no-cors",
-          body: JSON.stringify(userLogin),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch("http://localhost/api/formlogin.php", {
+        method: "POST",
+        //  mode:"no-cors",
+        body: JSON.stringify(userLogin),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       // if (!response.ok) {
       //   throw new Error(HTTP error! Status: ${response.status});
       // }
 
       const data = await response.json();
+      console.log(data.Status == 200);
+      if (data.Status === 200) {
+        navigator("/Mainapp");
+      }
       // setStatusCode(200);
       // Store the response data in state or do something else with it
       console.log(data);

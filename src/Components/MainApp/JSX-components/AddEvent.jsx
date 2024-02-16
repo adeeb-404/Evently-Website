@@ -41,7 +41,7 @@ const AddEvent = ({ setEvents, toggleAdd }) => {
             type="text"
             name="festName"
             onChange={handlePost}
-            min={5}
+            min="5"
             max={50}
           />
         </div>
@@ -60,7 +60,7 @@ const AddEvent = ({ setEvents, toggleAdd }) => {
           <input
             required
             className=" border-slate-700 border-2 bg-slate-800 shadow-sm shadow-slate-500 focus:shadow-2xl focus:shadow-slate-100 hover:shadow-2xl w-[70%]"
-            type="text"
+            type="time"
             name="time"
             onChange={handlePost}
           />
