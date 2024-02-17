@@ -35,14 +35,17 @@ const Navbar = () => {
     e.preventDefault();
     console.log(user);
     try {
-      const response = await fetch("http://localhost/api/testresponse.php", {
-        method: "POST",
-        //  mode:"no-cors",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "http://localhost/backend/api/testresponse.php",
+        {
+          method: "POST",
+          //  mode:"no-cors",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       // if (!response.ok) {
       //   throw new Error(HTTP error! Status: ${response.status});
       // }
@@ -74,14 +77,17 @@ const Navbar = () => {
     // e.preventDefault();
     console.log(userLogin);
     try {
-      const response = await fetch("http://localhost/api/formlogin.php", {
-        method: "POST",
-        //  mode:"no-cors",
-        body: JSON.stringify(userLogin),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "http://localhost/backend/api/formlogin.php",
+        {
+          method: "POST",
+          //  mode:"no-cors",
+          body: JSON.stringify(userLogin),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       // if (!response.ok) {
       //   throw new Error(HTTP error! Status: ${response.status});
       // }
