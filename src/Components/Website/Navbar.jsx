@@ -196,7 +196,8 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-around bg-red-500 w-full rounded-b-lg">
           <button
-            className={`w-[50%] ${signup && "bg-black"}`}
+            disabled={!signup}
+            className={`w-[50%] ${!signup && "bg-black"}`}
             onClick={() => {
               setsignup(false);
               handleModal();
@@ -205,10 +206,11 @@ const Navbar = () => {
             Log-in
           </button>
           <button
-            className={`w-[50%] ${!signup && "bg-black"}`}
+            disabled={signup}
+            className={`w-[50%] ${signup && "bg-black "}`}
             onClick={() => {
               setsignup(true);
-              handleModal(true);
+              handleModal();
             }}
           >
             Sign Up
