@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../CSS-components/HomeNav.css";
 import NavLogos from "./navLogos";
 import SearchBar from "./SearchBar";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeNav(props) {
+  const navigator = useNavigate();
+
+  async function handleLogOut() {
+    localStorage.removeItem("username");
+    localStorage.removeItem("fname");
+    localStorage.removeItem("lname");
+    navigator("/");
+  }
+
   function handleSearch(value) {
     console.log(value);
     // console.log(isSearch);
@@ -18,6 +28,7 @@ export default function HomeNav(props) {
         </h1>
       </div>
       <SearchBar handleSearch={handleSearch} />
+      <h1 onClick={handleLogOut}>Log out</h1>
       <NavLogos />
     </div>
   );

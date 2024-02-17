@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -7,7 +7,15 @@ const Navbar = () => {
   const [signup, setsignup] = useState(false);
   const [user, setUser] = useState({});
   const [userLogin, setUserLogin] = useState({});
+  const [sign, setsign] = useState("Get Started");
+
+  useEffect(
+    () => setsign(localStorage.getItem("username") ? "In to App" : "Sign Up"),
+    []
+  );
+
   function handleClick() {
+    if (localStorage.getItem("username")) navigator("/MainApp");
     ref.current.showModal();
   }
   const submitLogin = (e) => {
@@ -300,7 +308,7 @@ const Navbar = () => {
           onClick={handleClick}
           className=" bg-[#009d41] py-2 px-2  lg:px-8 rounded-3xl _flex lg:flex-row items-center mx-9 transition-all lg:hover:py-3 hover:bg-[#007b20]"
         >
-          Get Start
+          {sign}
         </button>
       </nav>
     </>
