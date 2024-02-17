@@ -1,5 +1,6 @@
 import { FaWandMagicSparkles } from "react-icons/fa6";
 import { AiFillAlert } from "react-icons/ai";
+import { AiFillInteraction } from "react-icons/ai";
 import { BiSolidBellRing } from "react-icons/bi";
 import { MdManageAccounts } from "react-icons/md";
 import { AiOutlineAudit } from "react-icons/ai";
@@ -23,10 +24,10 @@ const Info = {
         "Simplify event organization with our effortless creation feature. Streamlined processes, intuitive interfaces, and customization options empower hosts for seamless event planning..",
     },
     {
-      image: <AiFillAlert />,
-      box_heading: "Quick RSVP Button:",
+      image: <AiFillInteraction />,
+      box_heading: "Interactive UI:",
       box_data:
-        " Implement a one-click RSVP button for attendees to quickly confirm their participation, streamlining the event registration process and encouraging higher attendance",
+        "Interactive UI engages users with dynamic elements, real-time updates, clickable components, and seamless transitions, enhancing usability for a captivating experience.",
     },
     {
       image: <BiSolidBellRing />,
