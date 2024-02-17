@@ -40,6 +40,9 @@ const Navbar = () => {
       // }
 
       const data = await response.json();
+      console.log(data.user);
+      localStorage.setItem("username", data.user);
+
       if (data.Status === 200) {
         navigator("/Mainapp");
       }
@@ -76,14 +79,24 @@ const Navbar = () => {
       // }
 
       const data = await response.json();
+
       console.log(data.Status == 200);
       if (data.Status === 200) {
         navigator("/Mainapp");
       }
       // setStatusCode(200);
       // Store the response data in state or do something else with it
-      console.log(data);
-      console.log(data.Status);
+      // console.log(data);
+      // console.log(data.Status);
+      // console.log(data.user);
+      // console.log(data.first_name);
+      // console.log(data.last_name);
+
+      localStorage.setItem("username", data.user);
+      localStorage.setItem("fname", data.first_name);
+      localStorage.setItem("lname", data.last_name);
+
+      console.log(data.email);
       if (data.Status === 403) {
         console.log("first");
         alert("wrong username or password");
