@@ -1,4 +1,4 @@
-*{
+* {
   border-radius: 0.4rem;
   margin: 0;
   padding: 0;
@@ -14,17 +14,82 @@
   text-align: center;
 }
 
-body{
+body {
   /* background-color: #343434; */
   height: auto;
   width: 100wh;
   margin: 0;
 }
 
+/* .--clock {
+  animation: anim 10s linear infinite;
+}
 
-
-
-
+@keyframes anim {
+  0% {
+    background-image: linear-gradient(rgb(51 65 85), rgb(241 245 249));
+  }
+  5% {
+    background-image: linear-gradient(18deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  10% {
+    background-image: linear-gradient(36deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  15% {
+    background-image: linear-gradient(54deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  20% {
+    background-image: linear-gradient(72deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  25% {
+    background-image: linear-gradient(90deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  30% {
+    background-image: linear-gradient(108deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  35% {
+    background-image: linear-gradient(126deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  40% {
+    background-image: linear-gradient(144deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  45% {
+    background-image: linear-gradient(162deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  50% {
+    background-image: linear-gradient(180deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  55% {
+    background-image: linear-gradient(198deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  60% {
+    background-image: linear-gradient(216deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  65% {
+    background-image: linear-gradient(234deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  70% {
+    background-image: linear-gradient(252deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  75% {
+    background-image: linear-gradient(270deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  80% {
+    background-image: linear-gradient(288deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  85% {
+    background-image: linear-gradient(306deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  90% {
+    background-image: linear-gradient(324deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  95% {
+    background-image: linear-gradient(342deg, rgb(51 65 85), rgb(241 245 249));
+  }
+  100% {
+    background-image: linear-gradient(rgb(51 65 85), rgb(241 245 249));
+  } */
+/* } */
 
 /* .EventBox > h1{
   font-weight: bold;
@@ -39,4 +104,3 @@ body{
   padding: 0 30px;
   font-size: 20px;
 } */
-

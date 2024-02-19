@@ -12,7 +12,7 @@ function Clockk() {
   }, []);
 
   return (
-    <div className=" bg-gradient-to-tr from-slate-700 to-slate-100 border-2 rounded-full hover:bg-gradient-to-r hover:from-slate-700 hover:to-slate-100">
+    <div className="--clock bg-gradient-to-tr from-slate-700 to-slate-100 border-2 rounded-full ">
       <Clock value={value} size="30vh" />
     </div>
   );
