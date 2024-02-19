@@ -1,1 +1,28 @@
 
+
+
+.profilePage{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.imageDiv:hover{
+    background-image: linear-gradient(-45deg, rgba(15, 23, 42, 0.645),rgba(134, 179, 238, 0.727));
+}
+
+.profileHeadings{
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.profileContent{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding:0.1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.499);
+    display: inline;
+}
+
