@@ -109,6 +109,7 @@ const Navbar = () => {
       localStorage.setItem("username", data.user);
       localStorage.setItem("fname", data.first_name);
       localStorage.setItem("lname", data.last_name);
+      localStorage.setItem("pp", data.profile ? data.profile : 0);
 
       console.log(data.email);
       if (data.Status === 403) {

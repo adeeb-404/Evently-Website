@@ -44,9 +44,11 @@ const NavLogos = () => {
           </button>
         )}
         <h2>Welcome {name}</h2>
-        <CgProfile
-          className="reactIcon hover:shadow-slate-300 shadow-xl"
+        <img
+          src={`P${localStorage.getItem("pp")}.jpg`}
+          className="reactIcon hover:shadow-slate-300 shadow-xl h-14 rounded-full"
           id="profileIcon"
+          onClick={() => navigate("/Profile")}
         />
       </div>
     </>
