@@ -27,10 +27,6 @@ const Navbar = () => {
     ref.current.hideModal();
   }
 
-  function onSubmit() {
-    // window.open("https://www.google.com/");
-  }
-
   async function handleSubmit(e) {
     e.preventDefault();
     console.log(user);
@@ -255,7 +251,6 @@ const Navbar = () => {
               Submit
             </button>
             <button
-              onClick={onSubmit}
               type="reset"
               className=" p-2 border-2 mt-4 rounded-md bg-stone-800 text-stone-300 hover:bg-stone-700 hover:text-stone-100 mx-10"
             >
