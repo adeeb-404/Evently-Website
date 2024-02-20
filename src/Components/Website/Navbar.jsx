@@ -1,13 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Errormsg from "./Errormsg";
 
 const Navbar = () => {
   const ref = useRef();
   const navigator = useNavigate();
   const [signup, setsignup] = useState(false);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    username: "",
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
   const [userLogin, setUserLogin] = useState({});
   const [sign, setsign] = useState("Get Started");
+  const [errors, setErrors] = useState({
+    username: null,
+    first_name: null,
+    last_name: null,
+    email: null,
+    password: null,
+  });
 
   useEffect(
     () => setsign(localStorage.getItem("username") ? "In to App" : "Sign Up"),
@@ -27,8 +41,56 @@ const Navbar = () => {
     ref.current.hideModal();
   }
 
+  const validateForm = (data) => {
+    let errors = {};
+    if (!data.username.trim()) {
+      errors.username = "Username is required";
+    } else if (data.username.length < 3) {
+      errors.username = "Username must be atleast 3 characters long";
+    }
+    if (!data.first_name.trim()) {
+      errors.first_name = "First Name is required";
+    }
+    if (!data.last_name.trim()) {
+      errors.last_name = "Last Name is required";
+    }
+    if (!data.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+      errors.email = "Email is invalid";
+    }
+    if (!data.password.trim()) {
+      errors.password = "Password is required";
+    } else if (data.password.length < 6) {
+      errors.password = "Password must be at least 6 characters long";
+    }
+    return errors;
+  };
+
   async function handleSubmit(e) {
     e.preventDefault();
+    const newErrors = validateForm(user);
+    if (Object.keys(newErrors).length === 0) {
+      // Form is valid, proceed with submission
+      console.log("Form submitted:", formData);
+    } else {
+      const { username, first_name, last_name, email, password } = newErrors;
+      alert(
+        first_name
+          ? first_name
+          : last_name
+          ? last_name
+          : email
+          ? email
+          : username
+          ? username
+          : password
+          ? password
+          : null
+      );
+      setErrors(newErrors);
+      return;
+    }
     console.log(user);
     try {
       const response = await fetch(
