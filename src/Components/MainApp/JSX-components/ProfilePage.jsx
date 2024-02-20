@@ -32,6 +32,10 @@ const ProfilePage = () => {
     navigate("/MainApp");
   }
 
+  function handleClose() {
+    navigate("/MainApp");
+  }
+
   return (
     <div className="profilePage bg-gradient-to-b from-slate-900 to-slate-950">
       <h1 className="text-2xl">Profile page </h1>
@@ -52,13 +56,16 @@ const ProfilePage = () => {
           </div>
           <div className="flex flex-col text-start">
             <p className="profileHeadings">Username :</p>
-            <p className="profileContent"> Manoj</p>
+            <p className="profileContent">
+              {" "}
+              {localStorage.getItem("username")}
+            </p>
             <p className="profileHeadings">First Name :</p>
-            <p className="profileContent"> Manoj </p>
+            <p className="profileContent"> {localStorage.getItem("fname")}</p>
             <p className="profileHeadings">Last Name :</p>
-            <p className="profileContent"> Hebbar</p>
+            <p className="profileContent"> {localStorage.getItem("lname")}</p>
             <p className="profileHeadings">Email :</p>
-            <p className="profileContent"> manojhebbar@gmail.com </p>
+            <p className="profileContent"> {localStorage.getItem("email")}</p>
           </div>
         </div>
         <div className="imgOptionContainer flex gap-5 justify-start pl-10 pt-5 ">
@@ -89,6 +96,12 @@ const ProfilePage = () => {
         onClick={handleSaveClick}
       >
         SAVE CHANGES
+      </button>
+      <button
+        className="border-2 border-slate-500 p-4 bg-red-700 m-12"
+        onClick={handleClose}
+      >
+        CLOSE
       </button>
     </div>
   );
