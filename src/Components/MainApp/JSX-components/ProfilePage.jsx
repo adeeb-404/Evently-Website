@@ -15,8 +15,20 @@ const ProfilePage = () => {
     setProfilePics((prev) => (prev == "hidden" ? "block" : "hidden"));
   }
 
-  function handleSaveClick() {
+  async function handleSaveClick() {
     localStorage.setItem("pp", profile);
+    const username = localStorage.getItem("username");
+    const response = await fetch(
+      "http://localhost/backend/api/savechanges.php",
+      {
+        method: "POST",
+        //  mode:"no-cors",
+        body: JSON.stringify({ username: username, profile: profile }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     navigate("/MainApp");
   }
 
@@ -39,13 +51,13 @@ const ProfilePage = () => {
             <img src={`P${profile}.jpg`} className="w-100 h-72 rounded-full" />
           </div>
           <div className="flex flex-col text-start">
-            <p className="profileHeadings">Username :</p>{" "}
+            <p className="profileHeadings">Username :</p>
             <p className="profileContent"> Manoj</p>
-            <p className="profileHeadings">First Name :</p>{" "}
+            <p className="profileHeadings">First Name :</p>
             <p className="profileContent"> Manoj </p>
-            <p className="profileHeadings">Last Name :</p>{" "}
+            <p className="profileHeadings">Last Name :</p>
             <p className="profileContent"> Hebbar</p>
-            <p className="profileHeadings">Email :</p>{" "}
+            <p className="profileHeadings">Email :</p>
             <p className="profileContent"> manojhebbar@gmail.com </p>
           </div>
         </div>

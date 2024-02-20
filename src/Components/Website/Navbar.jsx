@@ -72,7 +72,48 @@ const Navbar = () => {
     const newErrors = validateForm(user);
     if (Object.keys(newErrors).length === 0) {
       // Form is valid, proceed with submission
-      console.log("Form submitted:", formData);
+      // console.log("Form submitted:", formData);
+
+      console.log(user);
+      try {
+        const response = await fetch(
+          "http://localhost/backend/api/testresponse.php",
+          {
+            method: "POST",
+            //  mode:"no-cors",
+            body: JSON.stringify(user),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        // if (!response.ok) {
+        //   throw new Error(HTTP error! Status: ${response.status});
+        // }
+
+        localStorage.setItem("username", user.username);
+        localStorage.setItem("fname", user.first_name);
+        localStorage.setItem("lname", user.last_name);
+        localStorage.setItem("pp", user.profile ? user.profile : 0);
+        localStorage.setItem("email", user.email);
+        const data = await response.json();
+        console.log(data.user);
+
+        if (data.Status === 200) {
+          navigator("/Mainapp");
+        }
+        // setStatusCode(200);
+        // Store the response data in state or do something else with it
+        console.log(data);
+        console.log(data.Status);
+        if (data.Status === 401) {
+          console.log("first");
+          alert("USER ALREADY exsits");
+          return;
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
     } else {
       const { username, first_name, last_name, email, password } = newErrors;
       alert(
@@ -90,42 +131,6 @@ const Navbar = () => {
       );
       setErrors(newErrors);
       return;
-    }
-    console.log(user);
-    try {
-      const response = await fetch(
-        "http://localhost/backend/api/testresponse.php",
-        {
-          method: "POST",
-          //  mode:"no-cors",
-          body: JSON.stringify(user),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      // if (!response.ok) {
-      //   throw new Error(HTTP error! Status: ${response.status});
-      // }
-
-      const data = await response.json();
-      console.log(data.user);
-      localStorage.setItem("username", data.user);
-
-      if (data.Status === 200) {
-        navigator("/Mainapp");
-      }
-      // setStatusCode(200);
-      // Store the response data in state or do something else with it
-      console.log(data);
-      console.log(data.Status);
-      if (data.Status === 401) {
-        console.log("first");
-        alert("USER ALREADY exsits");
-        return;
-      }
-    } catch (error) {
-      console.error("Error:", error);
     }
   }
 
@@ -168,6 +173,7 @@ const Navbar = () => {
       localStorage.setItem("fname", data.first_name);
       localStorage.setItem("lname", data.last_name);
       localStorage.setItem("pp", data.profile ? data.profile : 0);
+      localStorage.setItem("email", data.email);
 
       console.log(data.email);
       if (data.Status === 403) {

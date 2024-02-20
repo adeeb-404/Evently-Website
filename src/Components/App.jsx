@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Page from "./Website/page";
+import Page from "./Website/Page";
 import MainApp from "./MainApp/JSX-components/MainApp";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProfilePage from "./MainApp/JSX-components/ProfilePage";

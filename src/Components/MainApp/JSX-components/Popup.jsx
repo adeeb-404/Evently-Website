@@ -10,6 +10,50 @@ export default function Popup(props) {
     setIsAttend(false);
   }
 
+  async function handle_Adttend_event() {
+    const data = {
+      name: props.fName,
+      place: props.place,
+      // time: props.time,
+      // date: props.date,
+      // duration: props.duration,
+      // age_group: props.ageGroup,
+      // category: props.category,
+      // dress_code: props.dressCode,
+      // contact_no: props.contactNo,
+      username: localStorage.getItem("username"),
+    };
+    props.setTriggered(false);
+    console.log(data);
+    await fetch("http://localhost/backend/api/attendance.php", {
+      method: "post",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data1 = {
+      name: props.fName,
+      place: props.place,
+      time: props.time,
+      date: props.date,
+      duration: props.duration,
+      age_group: props.ageGroup,
+      category: props.category,
+      dress_code: props.dressCode,
+      fname: localStorage.getItem("fname"),
+      email: localStorage.getItem("email"),
+    };
+    await fetch("http://localhost/backend/api/sendmail.php", {
+      method: "post",
+      body: JSON.stringify(data1),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    alert("Thank you for attending the event,Check your inbox for more....");
+  }
+
   return (
     <>
       <div className="popupBody bg-opacity-85 bg-slate-950">
@@ -51,7 +95,10 @@ export default function Popup(props) {
             <p className="eventDisc">Discription : </p>
             <p className="ContentInfo">{props.discription}</p>
           </div>
-          <button className=" border-2 w-36 h-10 m-4 hover:bg-gradient-to-tr hover:from-orange-400 hover:to-red-600 hover:transition-all">
+          <button
+            className=" border-2 w-36 h-10 m-4 hover:bg-gradient-to-tr hover:from-orange-400 hover:to-red-600 hover:transition-all"
+            onClick={handle_Adttend_event}
+          >
             Attend Event
           </button>
         </div>
