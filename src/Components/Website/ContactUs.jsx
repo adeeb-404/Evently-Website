@@ -5,7 +5,7 @@ import { CgMail } from "react-icons/cg";
 
 const ContactUs = () => {
   return (
-    <div className="h-fit m-4">
+    <div className="h-fit m-4" id="ContactUs">
       <hr className="mx-10" />
       <div className=" m-10 my-20">
         <h1 className="_flex font-mono text-[3rem]">Contact Us</h1>

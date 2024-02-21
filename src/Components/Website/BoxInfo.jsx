@@ -1,5 +1,4 @@
 import { FaWandMagicSparkles } from "react-icons/fa6";
-import { AiFillAlert } from "react-icons/ai";
 import { AiFillInteraction } from "react-icons/ai";
 import { BiSolidBellRing } from "react-icons/bi";
 import { MdManageAccounts } from "react-icons/md";
@@ -8,12 +7,10 @@ import { BsClockFill } from "react-icons/bs";
 import { FaMobileAlt } from "react-icons/fa";
 import { LuHeartHandshake } from "react-icons/lu";
 import { TbBulbFilled } from "react-icons/tb";
-import { VscOrganization } from "react-icons/vsc";
 import { SiAwsorganizations } from "react-icons/si";
 import { PiHandTapFill } from "react-icons/pi";
 import { IoPerson } from "react-icons/io5";
 import { SiSymantec } from "react-icons/si";
-
 
 const Info = {
   Features: [
@@ -65,7 +62,7 @@ const Info = {
       image: <FaMobileAlt />,
       box_heading: "Mobile Accessibility:",
       box_data:
-      "Access and manage events on the go with mobile app compatibility, ensuring convenience and real-time updates directly from your smartphone.",
+        "Access and manage events on the go with mobile app compatibility, ensuring convenience and real-time updates directly from your smartphone.",
     },
   ],
   "What we Promise": [
@@ -104,15 +101,15 @@ const Info = {
     {
       image: <IoPerson />,
       box_heading: "Akshay Raj",
-      box_data:`Back-End Developer : 
-Managing server-side logic, databases, and overall backend functionality.`    },
+      box_data: `Back-End Developer : 
+Managing server-side logic, databases, and overall backend functionality.`,
+    },
     {
       image: <IoPerson />,
       box_heading: "Mohammed Adeeb",
       box_data:
         " Full-Stack Developer : Bridging the gap between frontend and backend development.",
     },
-
   ],
 };
 

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaBell } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";
-import { CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 
 const NavLogos = () => {
@@ -20,10 +18,24 @@ const NavLogos = () => {
   }, []);
   // setname(localStorage.getItem("username"));
   async function handleLogOut() {
-    localStorage.removeItem("username");
-    localStorage.removeItem("fname");
-    localStorage.removeItem("lname");
+    localStorage.clear();
     navigator("/");
+  }
+
+  async function handleDelete() {
+    const izit = confirm("Are you sure, the process is irreversible?");
+    if (!izit) return;
+    //PHP
+    await fetch("http://localhost/backend/api/deleteAccount.php", {
+      method: "post",
+      body: JSON.stringify({ username: localStorage.getItem("username") }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    localStorage.clear();
+    navigate("/");
   }
   return (
     <>
@@ -36,12 +48,20 @@ const NavLogos = () => {
           <IoMdSettings className="reactIcon    hover:shadow-slate-300 shadow-xl " />
         </div>
         {show && (
-          <button
-            onClick={handleLogOut}
-            className=" absolute -bottom-12  z-1 bg-slate-900 p-3 hover:bg-black hover:shadow-slate-300 hover:shadow-lg border-2"
-          >
-            Log out
-          </button>
+          <>
+            <button
+              onClick={handleLogOut}
+              className=" absolute -bottom-12  z-1 bg-slate-900 p-3 hover:bg-black hover:shadow-slate-300 hover:shadow-lg border-2 w-44"
+            >
+              Log out
+            </button>
+            <button
+              onClick={handleDelete}
+              className=" absolute -bottom-24  z-1 bg-slate-900 p-3  hover:shadow-red-300 hover:shadow-lg border-2 w-44 text-red-600 hover:bg-red-600 hover:text-white"
+            >
+              Delete Account
+            </button>
+          </>
         )}
         <h2>Welcome {name}</h2>
         <img

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../CSS-components/ProfilePage.css";
 import { HiPencilSquare } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,14 @@ const ProfilePage = () => {
   const [profile, setProfile] = useState(
     localStorage.getItem("pp") ? localStorage.getItem("pp") : 0
   );
+
+  useEffect(() => {
+    let name = localStorage.getItem("username");
+    if (!name) {
+      navigate("/");
+    }
+  }, []);
+
   function handleProfileClick() {
     setProfilePics((prev) => (prev == "hidden" ? "block" : "hidden"));
   }

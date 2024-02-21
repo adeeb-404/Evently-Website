@@ -15,18 +15,27 @@ const AddEvent = ({ setEvents, toggleAdd }) => {
     contactNo: undefined,
     discription: undefined,
   });
+
   const handlePost = (e) => {
     setEvent((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
-  const submitHandler = (e) => {
+
+  async function submitHandler(e) {
     e.preventDefault();
     console.log(event);
     setEvents((prev) => [event, ...prev]);
+    await fetch("http://localhost/backend/api/addevent.php", {
+      method: "post",
+      body: JSON.stringify(event),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     toggleAdd();
-  };
+  }
   return (
     <div className="AddEvent flex-col justify-center p-0 max-h-[80vh] overflow-auto">
       <h1 className="Add-event-details text-slate-200 text-2xl m-3">
