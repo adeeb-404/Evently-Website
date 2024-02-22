@@ -13,16 +13,20 @@ const ContactUs = () => {
       <div className="flex items-center justify-around">
         <div>
           <div className=" flex  items-center">
-            <FaInstagram className="hover:bg-gradient-to-r hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 hover:rounded-2xl w-full h-20" />
-            <h1 className=" text-xl">Evently</h1>
+            <a href="https://www.instagram.com/eventlyyy/">
+              <FaInstagram className="hover:bg-gradient-to-r hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 hover:rounded-2xl w-full h-20" />
+            </a>
+            <h1 className=" text-xl">Insta</h1>
           </div>
           <div className=" flex  items-center">
             <FaFacebook className="hover:bg-gradient-to-r hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 hover:rounded-2xl w-full h-20" />
-            <h1 className=" text-xl">Evently</h1>
+            <h1 className=" text-xl">Facebook</h1>
           </div>
           <div className=" flex  items-center">
-            <CgMail className="hover:bg-gradient-to-r hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 hover:rounded-2xl w-full h-20" />
-            <h1 className=" text-xl">Evently</h1>
+            <a href="mailto:officialeventlyapp@gmail.com">
+              <CgMail className="hover:bg-gradient-to-r hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 hover:rounded-2xl w-full h-20" />
+            </a>
+            <h1 className=" text-xl">Mail</h1>
           </div>
         </div>
         <iframe

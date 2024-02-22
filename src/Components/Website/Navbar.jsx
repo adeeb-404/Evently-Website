@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Errormsg from "./Errormsg";
 
 const Navbar = () => {
   const ref = useRef();
@@ -139,6 +138,10 @@ const Navbar = () => {
   async function handleLoginSubmit() {
     // e.preventDefault();
     console.log(userLogin);
+    if (!userLogin.username || !userLogin.password) {
+      alert("Fill all the fields");
+      return;
+    }
     try {
       const response = await fetch(
         "http://localhost/backend/api/formlogin.php",
@@ -350,40 +353,8 @@ const Navbar = () => {
           <ul className=" _flex lg:flex-row gap-9 m-4 text-sm lg:text-2xl">
             <li>
               <a
-                href="#Fea"
-                className="hidden lg:flex transition-colors hover:text-gray-400"
-              >
-                Features
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Why"
-                className="hidden lg:flex transition-colors hover:text-gray-400"
-              >
-                Why Evently?
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Wha"
-                className="hidden lg:flex transition-colors hover:text-gray-400"
-              >
-                Our Promise
-              </a>
-            </li>
-            <li>
-              <a
-                href="#Dev"
-                className="hidden lg:flex transition-colors hover:text-gray-400"
-              >
-                Developer's info
-              </a>
-            </li>
-            <li>
-              <a
                 href="#ContactUs"
-                className="hidden lg:flex transition-colors hover:text-gray-400"
+                className="CONTACT_US hidden lg:flex transition-colors hover:text-gray-400"
               >
                 Contact Us
               </a>
